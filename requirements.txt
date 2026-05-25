@@ -1,0 +1,12 @@
+# =========================
+# requirements.txt
+# =========================
+
+PyQt6
+psutil
+keyboard
+screeninfo
+pyinstaller
+wmi
+pywin32
+ping3

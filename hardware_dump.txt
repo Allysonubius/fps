@@ -1,0 +1,1558 @@
+PYTHON: 3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]
+DLL EXISTS: True
+DLL LOADED
+IMPORT OK
+FLAGS OK
+OPEN OK
+
+====================================================================================================
+LIBRE HARDWARE MONITOR SENSOR DUMP
+====================================================================================================
+DATE: 2026-05-25 03:07:49.010237
+
+HARDWARE COUNT: 15
+
+====================================================================================================
+HARDWARE: MSI MPG B550 GAMING PLUS (MS-7C56) | Motherboard
+====================================================================================================
+
+TOTAL SENSORS: 0
+
+====================================================================================================
+HARDWARE: AMD Ryzen 7 5700X | Cpu
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #1
+TYPE       : Load
+VALUE      : 28.989999771118164
+MIN        : 28.989999771118164
+MAX        : 100.0
+IDENTIFIER : /amdcpu/0/load/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #2
+TYPE       : Load
+VALUE      : 34.779998779296875
+MIN        : 20.0
+MAX        : 34.779998779296875
+IDENTIFIER : /amdcpu/0/load/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #3
+TYPE       : Load
+VALUE      : 18.84000015258789
+MIN        : 18.84000015258789
+MAX        : 20.0
+IDENTIFIER : /amdcpu/0/load/4
+INDEX      : 4
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #4
+TYPE       : Load
+VALUE      : 17.389999389648438
+MIN        : 17.389999389648438
+MAX        : 30.0
+IDENTIFIER : /amdcpu/0/load/5
+INDEX      : 5
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #5
+TYPE       : Load
+VALUE      : 43.47999954223633
+MIN        : 43.47999954223633
+MAX        : 70.0
+IDENTIFIER : /amdcpu/0/load/6
+INDEX      : 6
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #6
+TYPE       : Load
+VALUE      : 75.36000061035156
+MIN        : 40.0
+MAX        : 75.36000061035156
+IDENTIFIER : /amdcpu/0/load/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #7
+TYPE       : Load
+VALUE      : 7.25
+MIN        : 7.25
+MAX        : 20.0
+IDENTIFIER : /amdcpu/0/load/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #8
+TYPE       : Load
+VALUE      : 11.59000015258789
+MIN        : 0.0
+MAX        : 11.59000015258789
+IDENTIFIER : /amdcpu/0/load/9
+INDEX      : 9
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #9
+TYPE       : Load
+VALUE      : 47.83000183105469
+MIN        : 47.83000183105469
+MAX        : 50.0
+IDENTIFIER : /amdcpu/0/load/10
+INDEX      : 10
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #10
+TYPE       : Load
+VALUE      : 69.56999969482422
+MIN        : 30.0
+MAX        : 69.56999969482422
+IDENTIFIER : /amdcpu/0/load/11
+INDEX      : 11
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #11
+TYPE       : Load
+VALUE      : 14.489999771118164
+MIN        : 14.489999771118164
+MAX        : 20.0
+IDENTIFIER : /amdcpu/0/load/12
+INDEX      : 12
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #12
+TYPE       : Load
+VALUE      : 14.489999771118164
+MIN        : 14.489999771118164
+MAX        : 20.0
+IDENTIFIER : /amdcpu/0/load/13
+INDEX      : 13
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #13
+TYPE       : Load
+VALUE      : 8.699999809265137
+MIN        : 8.699999809265137
+MAX        : 20.0
+IDENTIFIER : /amdcpu/0/load/14
+INDEX      : 14
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #14
+TYPE       : Load
+VALUE      : 7.25
+MIN        : 7.25
+MAX        : 10.0
+IDENTIFIER : /amdcpu/0/load/15
+INDEX      : 15
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #15
+TYPE       : Load
+VALUE      : 28.989999771118164
+MIN        : 28.989999771118164
+MAX        : 40.0
+IDENTIFIER : /amdcpu/0/load/16
+INDEX      : 16
+
+---------------- SENSOR ----------------
+NAME       : CPU Core #16
+TYPE       : Load
+VALUE      : 15.9399995803833
+MIN        : 10.0
+MAX        : 15.9399995803833
+IDENTIFIER : /amdcpu/0/load/17
+INDEX      : 17
+
+---------------- SENSOR ----------------
+NAME       : CPU Total
+TYPE       : Load
+VALUE      : 27.809999465942383
+MIN        : 27.809999465942383
+MAX        : 31.25
+IDENTIFIER : /amdcpu/0/load/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : CPU Core Max
+TYPE       : Load
+VALUE      : 75.36000061035156
+MIN        : 75.36000061035156
+MAX        : 100.0
+IDENTIFIER : /amdcpu/0/load/1
+INDEX      : 1
+
+---------------- SENSOR ----------------
+NAME       : Package
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : Cores (Average)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/1
+INDEX      : 1
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Cores (Average Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/2
+INDEX      : 2
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #1
+TYPE       : Clock
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/clock/3
+INDEX      : 3
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #1 (Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/4
+INDEX      : 4
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #1
+TYPE       : Factor
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/factor/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : Core #1 (SMU)
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/1
+INDEX      : 1
+
+---------------- SENSOR ----------------
+NAME       : Core #1 VID
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Core #2
+TYPE       : Clock
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/clock/5
+INDEX      : 5
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #2 (Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/6
+INDEX      : 6
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #2
+TYPE       : Factor
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/factor/1
+INDEX      : 1
+
+---------------- SENSOR ----------------
+NAME       : Core #2 (SMU)
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Core #2 VID
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Core #3
+TYPE       : Clock
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/clock/7
+INDEX      : 7
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #3 (Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/8
+INDEX      : 8
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #3
+TYPE       : Factor
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/factor/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Core #3 (SMU)
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Core #3 VID
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/4
+INDEX      : 4
+
+---------------- SENSOR ----------------
+NAME       : Core #4
+TYPE       : Clock
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/clock/9
+INDEX      : 9
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #4 (Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/10
+INDEX      : 10
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #4
+TYPE       : Factor
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/factor/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Core #4 (SMU)
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/4
+INDEX      : 4
+
+---------------- SENSOR ----------------
+NAME       : Core #4 VID
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/5
+INDEX      : 5
+
+---------------- SENSOR ----------------
+NAME       : Core #5
+TYPE       : Clock
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/clock/11
+INDEX      : 11
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #5 (Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/12
+INDEX      : 12
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #5
+TYPE       : Factor
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/factor/4
+INDEX      : 4
+
+---------------- SENSOR ----------------
+NAME       : Core #5 (SMU)
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/5
+INDEX      : 5
+
+---------------- SENSOR ----------------
+NAME       : Core #5 VID
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/6
+INDEX      : 6
+
+---------------- SENSOR ----------------
+NAME       : Core #6
+TYPE       : Clock
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/clock/13
+INDEX      : 13
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #6 (Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/14
+INDEX      : 14
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #6
+TYPE       : Factor
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/factor/5
+INDEX      : 5
+
+---------------- SENSOR ----------------
+NAME       : Core #6 (SMU)
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/6
+INDEX      : 6
+
+---------------- SENSOR ----------------
+NAME       : Core #6 VID
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Core #7
+TYPE       : Clock
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/clock/15
+INDEX      : 15
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #7 (Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/16
+INDEX      : 16
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #7
+TYPE       : Factor
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/factor/6
+INDEX      : 6
+
+---------------- SENSOR ----------------
+NAME       : Core #7 (SMU)
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Core #7 VID
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Core #8
+TYPE       : Clock
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/clock/17
+INDEX      : 17
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #8 (Effective)
+TYPE       : Clock
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/clock/18
+INDEX      : 18
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Core #8
+TYPE       : Factor
+VALUE      : None
+MIN        : None
+MAX        : None
+IDENTIFIER : /amdcpu/0/factor/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Core #8 (SMU)
+TYPE       : Power
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/power/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Core #8 VID
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/9
+INDEX      : 9
+
+---------------- SENSOR ----------------
+NAME       : Core (Tctl/Tdie)
+TYPE       : Temperature
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /amdcpu/0/temperature/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Core (SVI2 TFN)
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : SoC (SVI2 TFN)
+TYPE       : Voltage
+VALUE      : 1.5499999523162842
+MIN        : 1.5499999523162842
+MAX        : 1.5499999523162842
+IDENTIFIER : /amdcpu/0/voltage/1
+INDEX      : 1
+
+TOTAL SENSORS: 64
+
+====================================================================================================
+HARDWARE: Virtual Memory | Memory
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Memory Used
+TYPE       : Data
+VALUE      : 43.313804626464844
+MIN        : 43.313804626464844
+MAX        : 43.313804626464844
+IDENTIFIER : /vram/data/2
+INDEX      : 2
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Memory Available
+TYPE       : Data
+VALUE      : 28.613967895507812
+MIN        : 28.613967895507812
+MAX        : 28.613967895507812
+IDENTIFIER : /vram/data/3
+INDEX      : 3
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Memory
+TYPE       : Load
+VALUE      : 60.21847152709961
+MIN        : 60.21847152709961
+MAX        : 60.21847152709961
+IDENTIFIER : /vram/load/1
+INDEX      : 1
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+TOTAL SENSORS: 3
+
+====================================================================================================
+HARDWARE: Total Memory | Memory
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Memory Used
+TYPE       : Data
+VALUE      : 26.691368103027344
+MIN        : 26.691368103027344
+MAX        : 26.691368103027344
+IDENTIFIER : /ram/data/0
+INDEX      : 0
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Memory Available
+TYPE       : Data
+VALUE      : 21.236404418945312
+MIN        : 21.236404418945312
+MAX        : 21.236404418945312
+IDENTIFIER : /ram/data/1
+INDEX      : 1
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Memory
+TYPE       : Load
+VALUE      : 55.690818786621094
+MIN        : 55.690818786621094
+MAX        : 55.690818786621094
+IDENTIFIER : /ram/load/0
+INDEX      : 0
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+TOTAL SENSORS: 3
+
+====================================================================================================
+HARDWARE: AMD Radeon RX 7600 | GpuAmd
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : GPU Memory Total
+TYPE       : SmallData
+VALUE      : 8176.0
+MIN        : 8176.0
+MAX        : 8176.0
+IDENTIFIER : /gpu-amd/0/smalldata/2
+INDEX      : 2
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : Fullscreen FPS
+TYPE       : Factor
+VALUE      : 0.0
+MIN        : -1.0
+MAX        : 0.0
+IDENTIFIER : /gpu-amd/0/factor/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : D3D Dedicated Memory Total
+TYPE       : SmallData
+VALUE      : 8133.984375
+MIN        : 8133.984375
+MAX        : 8133.984375
+IDENTIFIER : /gpu-amd/0/smalldata/5
+INDEX      : 5
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : D3D Dedicated Memory Free
+TYPE       : SmallData
+VALUE      : 5598.26171875
+MIN        : 5574.26171875
+MAX        : 5598.26171875
+IDENTIFIER : /gpu-amd/0/smalldata/4
+INDEX      : 4
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : D3D Dedicated Memory Used
+TYPE       : SmallData
+VALUE      : 2535.72265625
+MIN        : 2535.72265625
+MAX        : 2559.72265625
+IDENTIFIER : /gpu-amd/0/smalldata/3
+INDEX      : 3
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : D3D Shared Memory Used
+TYPE       : SmallData
+VALUE      : 397.54296875
+MIN        : 389.54296875
+MAX        : 397.54296875
+IDENTIFIER : /gpu-amd/0/smalldata/6
+INDEX      : 6
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : D3D Shared Memory Free
+TYPE       : SmallData
+VALUE      : 24141.4765625
+MIN        : 24141.4765625
+MAX        : 24149.4765625
+IDENTIFIER : /gpu-amd/0/smalldata/7
+INDEX      : 7
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : D3D Shared Memory Total
+TYPE       : SmallData
+VALUE      : 24539.01953125
+MIN        : 24539.01953125
+MAX        : 24539.01953125
+IDENTIFIER : /gpu-amd/0/smalldata/8
+INDEX      : 8
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : D3D 3D
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 2.3248884677886963
+IDENTIFIER : /gpu-amd/0/load/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : D3D Copy
+TYPE       : Load
+VALUE      : 11.884936332702637
+MIN        : 0.3297699987888336
+MAX        : 11.884936332702637
+IDENTIFIER : /gpu-amd/0/load/4
+INDEX      : 4
+
+---------------- SENSOR ----------------
+NAME       : D3D Compute 0
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /gpu-amd/0/load/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : D3D Copy
+TYPE       : Load
+VALUE      : 5.781630516052246
+MIN        : 0.0
+MAX        : 5.781630516052246
+IDENTIFIER : /gpu-amd/0/load/5
+INDEX      : 5
+
+---------------- SENSOR ----------------
+NAME       : D3D Timer 0
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /gpu-amd/0/load/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : D3D Security 1
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /gpu-amd/0/load/6
+INDEX      : 6
+
+---------------- SENSOR ----------------
+NAME       : D3D Video JPEG 0
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /gpu-amd/0/load/9
+INDEX      : 9
+
+---------------- SENSOR ----------------
+NAME       : D3D Video Codec Engine
+TYPE       : Load
+VALUE      : 117.7405776977539
+MIN        : 33.72460174560547
+MAX        : 117.7405776977539
+IDENTIFIER : /gpu-amd/0/load/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : GPU Memory Used
+TYPE       : SmallData
+VALUE      : 2535.0
+MIN        : 2535.0
+MAX        : 2559.0
+IDENTIFIER : /gpu-amd/0/smalldata/0
+INDEX      : 0
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : GPU Memory Free
+TYPE       : SmallData
+VALUE      : 5641.0
+MIN        : 5617.0
+MAX        : 5641.0
+IDENTIFIER : /gpu-amd/0/smalldata/1
+INDEX      : 1
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : GPU Package
+TYPE       : Power
+VALUE      : 35.0
+MIN        : 0.0
+MAX        : 35.0
+IDENTIFIER : /gpu-amd/0/power/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : GPU Core
+TYPE       : Clock
+VALUE      : 14.0
+MIN        : 13.0
+MAX        : 14.0
+IDENTIFIER : /gpu-amd/0/clock/0
+INDEX      : 0
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : GPU Memory
+TYPE       : Clock
+VALUE      : 2238.0
+MIN        : 2238.0
+MAX        : 2238.0
+IDENTIFIER : /gpu-amd/0/clock/2
+INDEX      : 2
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+<<<<<<<< CLOCK SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : GPU Core
+TYPE       : Temperature
+VALUE      : 49.0
+MIN        : 49.0
+MAX        : 49.0
+IDENTIFIER : /gpu-amd/0/temperature/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : GPU Memory
+TYPE       : Temperature
+VALUE      : 52.0
+MIN        : 50.0
+MAX        : 52.0
+IDENTIFIER : /gpu-amd/0/temperature/1
+INDEX      : 1
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+---------------- SENSOR ----------------
+NAME       : GPU Hot Spot
+TYPE       : Temperature
+VALUE      : 52.0
+MIN        : 52.0
+MAX        : 52.0
+IDENTIFIER : /gpu-amd/0/temperature/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : GPU Fan
+TYPE       : Fan
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /gpu-amd/0/fan/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : GPU Fan
+TYPE       : Control
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /gpu-amd/0/control/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : GPU Core
+TYPE       : Voltage
+VALUE      : 0.7310000061988831
+MIN        : 0.7310000061988831
+MAX        : 0.7310000061988831
+IDENTIFIER : /gpu-amd/0/voltage/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : GPU Core
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /gpu-amd/0/load/0
+INDEX      : 0
+
+---------------- SENSOR ----------------
+NAME       : GPU Memory
+TYPE       : Load
+VALUE      : 1.0
+MIN        : 1.0
+MAX        : 1.0
+IDENTIFIER : /gpu-amd/0/load/1
+INDEX      : 1
+
+<<<<<<<< RAM RELATED SENSOR >>>>>>>>
+
+
+TOTAL SENSORS: 29
+
+====================================================================================================
+HARDWARE: CloudflareWARP | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 3.357117176055908
+MIN        : 3.357117176055908
+MAX        : 3.357117176055908
+IDENTIFIER : /nic/%7BDB484304-DB04-6AA0-A33D-7236836B364D%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 19.430877685546875
+MIN        : 19.430877685546875
+MAX        : 19.430877685546875
+IDENTIFIER : /nic/%7BDB484304-DB04-6AA0-A33D-7236836B364D%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 1530.34033203125
+IDENTIFIER : /nic/%7BDB484304-DB04-6AA0-A33D-7236836B364D%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 51408.7578125
+IDENTIFIER : /nic/%7BDB484304-DB04-6AA0-A33D-7236836B364D%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0004235127998981625
+IDENTIFIER : /nic/%7BDB484304-DB04-6AA0-A33D-7236836B364D%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: Conexão de Rede Bluetooth 3 | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BFE232DFD-DC26-4763-9FDF-8FACFB2BCE66%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BFE232DFD-DC26-4763-9FDF-8FACFB2BCE66%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BFE232DFD-DC26-4763-9FDF-8FACFB2BCE66%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BFE232DFD-DC26-4763-9FDF-8FACFB2BCE66%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BFE232DFD-DC26-4763-9FDF-8FACFB2BCE66%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: Conexão Local 2 | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B6AF15BCD-C0EA-4DA3-A859-58C7121DF91A%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B6AF15BCD-C0EA-4DA3-A859-58C7121DF91A%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B6AF15BCD-C0EA-4DA3-A859-58C7121DF91A%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B6AF15BCD-C0EA-4DA3-A859-58C7121DF91A%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B6AF15BCD-C0EA-4DA3-A859-58C7121DF91A%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: Conexão Local* 11 | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B509AC58A-54D7-413C-8D61-24DFAF5F7A37%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B509AC58A-54D7-413C-8D61-24DFAF5F7A37%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B509AC58A-54D7-413C-8D61-24DFAF5F7A37%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B509AC58A-54D7-413C-8D61-24DFAF5F7A37%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B509AC58A-54D7-413C-8D61-24DFAF5F7A37%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: Conexão Local* 12 | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BAA08C58E-BC16-487C-B2D7-96BB3CE98365%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BAA08C58E-BC16-487C-B2D7-96BB3CE98365%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BAA08C58E-BC16-487C-B2D7-96BB3CE98365%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BAA08C58E-BC16-487C-B2D7-96BB3CE98365%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BAA08C58E-BC16-487C-B2D7-96BB3CE98365%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: Ethernet 5 | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 4.338113784790039
+MIN        : 4.338113784790039
+MAX        : 4.338113784790039
+IDENTIFIER : /nic/%7BEA545AF5-E699-44A8-B1FB-F4C3F4023E25%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 21.125463485717773
+MIN        : 21.125463485717773
+MAX        : 21.125463485717773
+IDENTIFIER : /nic/%7BEA545AF5-E699-44A8-B1FB-F4C3F4023E25%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 13334.6904296875
+IDENTIFIER : /nic/%7BEA545AF5-E699-44A8-B1FB-F4C3F4023E25%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 63302.6796875
+IDENTIFIER : /nic/%7BEA545AF5-E699-44A8-B1FB-F4C3F4023E25%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.061309896409511566
+IDENTIFIER : /nic/%7BEA545AF5-E699-44A8-B1FB-F4C3F4023E25%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: Radmin VPN | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 0.0012359116226434708
+MIN        : 0.0012359116226434708
+MAX        : 0.0012359116226434708
+IDENTIFIER : /nic/%7B6C19FF26-B4C1-4263-8C85-F29EB5F27BC5%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 5.029141902923584e-07
+MIN        : 5.029141902923584e-07
+MAX        : 5.029141902923584e-07
+IDENTIFIER : /nic/%7B6C19FF26-B4C1-4263-8C85-F29EB5F27BC5%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B6C19FF26-B4C1-4263-8C85-F29EB5F27BC5%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B6C19FF26-B4C1-4263-8C85-F29EB5F27BC5%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B6C19FF26-B4C1-4263-8C85-F29EB5F27BC5%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: Tailscale | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 0.00043292250484228134
+MIN        : 0.00043292250484228134
+MAX        : 0.00043292250484228134
+IDENTIFIER : /nic/%7B37217669-42DA-4657-A55B-0D995D328250%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B37217669-42DA-4657-A55B-0D995D328250%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B37217669-42DA-4657-A55B-0D995D328250%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B37217669-42DA-4657-A55B-0D995D328250%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B37217669-42DA-4657-A55B-0D995D328250%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: vEthernet (Default Switch) | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 0.0006032222881913185
+MIN        : 0.0006032222881913185
+MAX        : 0.0006032222881913185
+IDENTIFIER : /nic/%7BB6D17508-ADA5-4686-AB14-14DB9AE495DD%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BB6D17508-ADA5-4686-AB14-14DB9AE495DD%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BB6D17508-ADA5-4686-AB14-14DB9AE495DD%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BB6D17508-ADA5-4686-AB14-14DB9AE495DD%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7BB6D17508-ADA5-4686-AB14-14DB9AE495DD%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
+
+====================================================================================================
+HARDWARE: vEthernet (WSL (Hyper-V firewall)) | Network
+====================================================================================================
+
+---------------- SENSOR ----------------
+NAME       : Data Uploaded
+TYPE       : Data
+VALUE      : 0.00024507008492946625
+MIN        : 0.00024507008492946625
+MAX        : 0.00024507008492946625
+IDENTIFIER : /nic/%7B8DBF2950-3C36-4048-B176-2FF84D2A97C1%7D/data/2
+INDEX      : 2
+
+---------------- SENSOR ----------------
+NAME       : Data Downloaded
+TYPE       : Data
+VALUE      : 1.3597309589385986e-06
+MIN        : 1.3597309589385986e-06
+MAX        : 1.3597309589385986e-06
+IDENTIFIER : /nic/%7B8DBF2950-3C36-4048-B176-2FF84D2A97C1%7D/data/3
+INDEX      : 3
+
+---------------- SENSOR ----------------
+NAME       : Upload Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B8DBF2950-3C36-4048-B176-2FF84D2A97C1%7D/throughput/7
+INDEX      : 7
+
+---------------- SENSOR ----------------
+NAME       : Download Speed
+TYPE       : Throughput
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B8DBF2950-3C36-4048-B176-2FF84D2A97C1%7D/throughput/8
+INDEX      : 8
+
+---------------- SENSOR ----------------
+NAME       : Network Utilization
+TYPE       : Load
+VALUE      : 0.0
+MIN        : 0.0
+MAX        : 0.0
+IDENTIFIER : /nic/%7B8DBF2950-3C36-4048-B176-2FF84D2A97C1%7D/load/1
+INDEX      : 1
+
+TOTAL SENSORS: 5
