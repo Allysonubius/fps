@@ -1,6 +1,6 @@
 # =========================
 # core/fps.py
-# PRESENTMON REALTIME STDOUT
+# PRESENTMON REALTIME STDOUT (SEM ARQUIVOS TEMPORÁRIOS)
 # =========================
 
 import subprocess
@@ -9,6 +9,7 @@ import os
 import csv
 import sys
 import time
+import atexit
 
 # =========================
 # GLOBAL FPS DATA
@@ -24,369 +25,161 @@ _running = False
 process = None
 
 # =========================
-# PROCESS LOCK
+# CONFIGURAÇÕES
 # =========================
 
-current_process = None
-current_process_time = 0
-
-# =========================
-# BLACKLIST
-# =========================
-
-PROCESS_BLACKLIST = [
-
-    "dwm.exe",
-    "explorer.exe",
-    "presentmon.exe",
-    "discord.exe",
-    "steamwebhelper.exe",
-    "obs64.exe",
-    "searchhost.exe",
-    "widgets.exe",
-    "textinputhost.exe",
-    "startmenuexperiencehost.exe"
-]
-
-# =========================
-# RESOURCE PATH
-# =========================
+PROCESS_BLACKLIST = {
+    "dwm.exe", "explorer.exe", "presentmon.exe", "discord.exe",
+    "steamwebhelper.exe", "obs64.exe", "searchhost.exe", "widgets.exe",
+    "textinputhost.exe", "startmenuexperiencehost.exe", "python.exe",
+    "fpsoverlay.exe", "main.exe", "code.exe"
+}
 
 def resource_path(relative_path):
-
     try:
         base_path = sys._MEIPASS
-
     except Exception:
         base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
-    return os.path.join(
-        base_path,
-        relative_path
-    )
+presentmon_path = resource_path(os.path.join("bin", "PresentMon.exe"))
 
 # =========================
-# PRESENTMON PATH
-# =========================
-
-presentmon_path = resource_path(
-    os.path.join(
-        "bin",
-        "PresentMon.exe"
-    )
-)
-
-# =========================
-# START PRESENTMON
+# CONTROLE DO PROCESSO
 # =========================
 
 def start_presentmon():
-
-    global _running
-    global process
+    global _running, process
 
     if _running:
         return
 
-    _running = True
-
-    # =========================
-    # CHECK EXE
-    # =========================
-
     if not os.path.exists(presentmon_path):
-
-        print("[PresentMon ERROR]")
-        print("EXE não encontrado:")
-        print(presentmon_path)
-
+        print(f"[PresentMon ERROR] Executável não encontrado em: {presentmon_path}")
         return
 
-    # =========================
-    # COMMAND
-    # =========================
+    _running = True
 
+    # Comando configurado com sessão exclusiva para evitar conflito com PresentMon zumbi
     command = [
-
         presentmon_path,
-
         "--stop_existing_session",
-
-        "--output_stdout",
-
-        "--exclude", "dwm.exe",
-        "--exclude", "explorer.exe",
-        "--exclude", "PresentMon.exe"
+        "--session_name", "FPSOverlay",
+        "--output_stdout"
     ]
 
-    print("[PresentMon CMD]")
-    print(command)
-
-    # =========================
-    # START PROCESS
-    # =========================
-
     process = subprocess.Popen(
-
         command,
-
         stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-
+        stderr=subprocess.DEVNULL,
         stdin=subprocess.DEVNULL,
-
         text=True,
         encoding="utf-8",
         errors="ignore",
-
         bufsize=1,
-
-        creationflags=(
-            subprocess.CREATE_NO_WINDOW
-            if os.name == "nt"
-            else 0
-        )
+        creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0
     )
 
-    print("[PresentMon] iniciado")
+    print("[PresentMon] Monitoramento via STDOUT iniciado com sessão FPSOverlay.")
+    threading.Thread(target=_reader_loop, daemon=True).start()
 
-    # =========================
-    # START THREAD
-    # =========================
+def stop_presentmon():
+    global _running, process, fps_data
+    _running = False
+    
+    if process:
+        try:
+            process.terminate()
+            process.wait(timeout=1)
+        except:
+            process.kill()
+        process = None
 
-    threading.Thread(
-        target=_reader_loop,
-        daemon=True
-    ).start()
+    fps_data.update({"fps": 0.0, "frametime": 0.0, "process": ""})
+    print("[PresentMon] Processo encerrado.")
 
-# =========================
-# FIND FRAME COLUMN
-# =========================
-
-def get_frametime_index(headers):
-
-    headers_lower = [h.lower() for h in headers]
-
-    for name in [
-
-        "msbetweenpresents",
-        "msbetweendisplaychange",
-        "msinpresentapi"
-
-    ]:
-
-        if name in headers_lower:
-            return headers_lower.index(name)
-
-    return None
+atexit.register(stop_presentmon)
 
 # =========================
-# READER LOOP
+# LÓGICA DE LEITURA
 # =========================
 
 def _reader_loop():
-
-    global process
-    global current_process
-    global current_process_time
-
+    global process, _running
+    
+    current_process = None
+    last_update_time = 0
+    
     headers = None
-    app_index = None
-    ft_index = None
+    app_idx = None
+    ft_idx = None
 
-    print("[PresentMon] monitorando FPS realtime...")
-
-    while True:
-
+    while _running and process:
         try:
-
-            # =========================
-            # READ LINE
-            # =========================
-
             line = process.stdout.readline()
-
             if not line:
-
-                time.sleep(0.001)
+                if process.poll() is not None: break
                 continue
 
+            # Limpa espaços e quebras de linha
             line = line.strip()
-
-            if not line:
+            
+            # Pula linhas em branco ou de aviso (warnings) antes do CSV começar
+            if not line or line.lower().startswith("warning") or line.lower().startswith("use"):
                 continue
 
-            # =========================
-            # IGNORE WARNINGS
-            # =========================
-
-            if (
-                line.lower().startswith("warning")
-                or line.lower().startswith("use ")
-                or line.lower().startswith("error:")
-            ):
-                continue
-
-            # =========================
-            # CSV PARSE
-            # =========================
-
-            try:
-                row = next(csv.reader([line]))
-            except:
-                continue
-
-            # =========================
-            # HEADER
-            # =========================
-
+            row = next(csv.reader([line]))
+            
+            # Identificar cabeçalhos
             if headers is None and "Application" in row:
-
                 headers = row
-
-                app_index = headers.index(
-                    "Application"
-                )
-
-                ft_index = get_frametime_index(
-                    headers
-                )
-
-                print("[HEADER OK]")
-                print(headers)
-
-                print("[APP INDEX]", app_index)
-                print("[FT INDEX]", ft_index)
-
+                app_idx = headers.index("Application")
+                
+                # Busca colunas de frametime cobrindo variações de letras maiúsculas/minúsculas
+                for col in ["MsBetweenPresents", "msBetweenPresents", "MsInPresentAPI", "msInPresentAPI"]:
+                    if col in headers:
+                        ft_idx = headers.index(col)
+                        break
                 continue
 
-            if headers is None:
+            # Pula se o cabeçalho não foi definido ou se a linha tá incompleta
+            if app_idx is None or ft_idx is None or len(row) <= max(app_idx, ft_idx):
                 continue
 
-            if ft_index is None:
+            app = row[app_idx].strip()
+            if not app or app.lower() in PROCESS_BLACKLIST or app == "<unknown>":
                 continue
 
-            if len(row) <= max(
-                app_index,
-                ft_index
-            ):
+            # Trata casos em que o PresentMon envia "NA"
+            if row[ft_idx] == "NA":
                 continue
-
-            # =========================
-            # APP
-            # =========================
-
-            app = row[app_index].strip()
-
-            if not app:
-                continue
-
-            app_lower = app.lower()
-
-            if (
-                app_lower in PROCESS_BLACKLIST
-                or app_lower == "<unknown>"
-            ):
-                continue
-
-            # =========================
-            # FRAMETIME
-            # =========================
 
             try:
-                frametime = float(
-                    row[ft_index]
-                )
-
-            except:
+                frametime = float(row[ft_idx])
+            except ValueError:
                 continue
 
-            if frametime <= 0:
-                continue
-
-            # =========================
-            # FPS
-            # =========================
-
+            if frametime <= 0: continue
             fps = 1000.0 / frametime
 
-            if fps <= 0 or fps > 1000:
-                continue
-
-            # =========================
-            # PROCESS LOCK LOGIC
-            # =========================
-
+            # Lógica de Foco: foca no app ativo e atualiza os dados
             now = time.time()
+            
+            # Reset foco se inativo por mais de 2 segundos
+            if current_process and (now - last_update_time) > 2.0:
+                current_process = None
 
-            # =========================
-            # FIRST PROCESS
-            # =========================
-
-            if current_process is None:
-
+            # Atualiza o processo atual (removido o limite bugado de fps > 35)
+            if current_process is None or app != current_process:
                 current_process = app
-                current_process_time = now
-
-                print(f"[LOCK] {app}")
-
-            # =========================
-            # SAME PROCESS
-            # =========================
-
+            
+            # Salva no dicionário global
             if app == current_process:
-
-                current_process_time = now
-
-            # =========================
-            # PROCESS SWITCH
-            # =========================
-
-            else:
-
-                # somente troca se
-                # o novo processo for relevante
-
-                if fps > 30:
-
-                    elapsed = (
-                        now -
-                        current_process_time
-                    )
-
-                    # estabilidade antes de trocar
-
-                    if elapsed > 2.0:
-
-                        print(
-                            f"[SWITCH] "
-                            f"{current_process} -> {app}"
-                        )
-
-                        current_process = app
-                        current_process_time = now
-
-            # =========================
-            # UPDATE ONLY LOCKED APP
-            # =========================
-
-            if app == current_process:
-
-                fps_data["fps"] = round(
-                    fps,
-                    1
-                )
-
-                fps_data["frametime"] = round(
-                    frametime,
-                    2
-                )
-
+                fps_data["fps"] = round(fps, 1)
+                fps_data["frametime"] = round(frametime, 2)
                 fps_data["process"] = app
+                last_update_time = now
 
-        except Exception as e:
-
-            print("[PresentMon ERROR]")
-            print(e)
-
-            time.sleep(0.1)
+        except Exception:
+            # Sleep curto para não sobrecarregar a CPU caso haja erros contínuos de leitura
+            time.sleep(0.01)

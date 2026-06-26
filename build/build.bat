@@ -11,6 +11,7 @@ py -m PyInstaller ^
 --noconfirm ^
 --onefile ^
 --windowed ^
+--uac-admin ^
 --name FPSOverlay ^
 --icon=assets/icon.ico ^
 --hidden-import=wmi ^

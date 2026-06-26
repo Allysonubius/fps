@@ -5,10 +5,10 @@ import multiprocessing
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QIcon
 
+# Seus módulos
 from overlay.overlay import FPSOverlay
 from hotkeys.hotkeys import register_hotkeys
 from core.sensors import initialize_hardware
-
 from core.fps import start_presentmon
 from core.network import start_network_monitor
 
@@ -17,19 +17,18 @@ from core.network import start_network_monitor
 # =========================
 
 def resource_path(relative_path):
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
+    # Tenta pegar o atributo, se não existir, usa o diretório atual
+    base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))
     return os.path.join(base_path, relative_path)
-
 
 # =========================
 # MAIN
 # =========================
 
 def main():
+    # Freeze support é essencial para multiprocessing no Windows
+    multiprocessing.freeze_support()
+    
     app = QApplication(sys.argv)
 
     # ICON
@@ -38,24 +37,22 @@ def main():
         app.setWindowIcon(QIcon(icon_path))
 
     # HARDWARE
-    dll_path = resource_path(
-        "bin/LibreHardwareMonitor/LibreHardwareMonitorLib.dll"
-    )
-
-    if os.path.exists(dll_path):
-        initialize_hardware(dll_path)
+    lhm_dll = resource_path("bin/LibreHardwareMonitor/LibreHardwareMonitorLib.dll")
+    if os.path.exists(lhm_dll):
+        initialize_hardware(lhm_dll)
     else:
-        print("[LHM ERROR] DLL não encontrada")
+        print("[LHM ERROR] DLL de hardware não encontrada")
 
     # =========================
-    # FPS TRACKER START
+    # FPS TRACKER (Apenas EXE)
     # =========================
+    
+    # Inicia o monitoramento (chama sua função no core.fps que usa o PresentMon.exe)
     start_presentmon()
     
     # =========================
     # NETWORK MONITOR
     # =========================
-
     start_network_monitor()
 
     # =========================
@@ -70,8 +67,5 @@ def main():
     # LOOP
     sys.exit(app.exec())
 
-
-# ENTRYPOINT
 if __name__ == "__main__":
-    multiprocessing.freeze_support()
     main()

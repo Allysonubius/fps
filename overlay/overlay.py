@@ -203,7 +203,6 @@ class FPSOverlay(QWidget, DraggableMixin):
 
         self.compact_label = QLabel()
 
-
         self.compact_label.setFont(
             QFont("Consolas", 10)
         )
@@ -745,7 +744,7 @@ github.com/Allysonubius
 
             process = fps_data.get(
                 "process",
-                "Unknown"
+                0
             )
 
             # =================================================
@@ -876,10 +875,6 @@ github.com/Allysonubius
             # DETAILED
             # =================================================
 
-            # =================================================
-            # DETAILED
-            # =================================================
-
             detailed_text = f"""
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🖥 CPU : {hw.get("cpu_name", "Unknown")}
@@ -977,11 +972,38 @@ F10 = SHOW/HIDE
     # =========================================================
 
     def close_app(self):
-
+        print("[OVERLAY] Iniciando encerramento seguro...")
+        
+        # 1. Para o timer da interface do PyQt
         self.timer.stop()
 
-        if hasattr(self, "tray"):
+        # 2. Finaliza o coletor do PresentMon de forma limpa (se possuir método dedicado)
+        try:
+            if hasattr(fps_data, "stop") and callable(fps_data.stop):
+                fps_data.stop()
+            elif hasattr(fps_data, "close") and callable(fps_data.close):
+                fps_data.close()
+            elif isinstance(fps_data, dict) and "stop" in fps_data:
+                fps_data["stop"] = True
+        except Exception as e:
+            print(f"[ERRO] Falha ao parar coletor de FPS: {e}")
 
+        # 3. Finaliza a thread/coleta de rede de forma limpa
+        try:
+            if hasattr(network_data, "stop") and callable(network_data.stop):
+                network_data.stop()
+        except Exception as e:
+            print(f"[ERRO] Falha ao parar coletor de rede: {e}")
+
+        # 4. Encerramento forçado caso o binário PresentMon.exe ainda esteja preso em execução
+        try:
+            os.system("taskkill /f /im PresentMon.exe >nul 2>&1")
+        except:
+            pass
+
+        # 5. Oculta o ícone do sistema para evitar ghosts na barra de tarefas
+        if hasattr(self, "tray"):
             self.tray.hide()
 
+        print("[OVERLAY] Processos finalizados com sucesso. Encerrando aplicação.")
         QApplication.quit()
