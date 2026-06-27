@@ -71,12 +71,13 @@ def get_status_icon(value, warning, critical):
     except:
         value = 0
 
-    if value < warning:
+    if value == 0:
+        return "[...]"
 
+    if value < warning:
         return "[SAFE]"
 
     elif value < critical:
-
         return "[WARN]"
 
     return "[CRIT]"
@@ -101,6 +102,10 @@ class FPSOverlay(QWidget, DraggableMixin):
         self.theme = THEMES["neon"]
 
         self.current_tab = 0
+        
+        # Variáveis para animação de loading
+        self.spinner_frames = ["|", "/", "-", "\\"]
+        self.spinner_idx = 0
 
         # =================================================
         # SIGNAL
@@ -516,7 +521,7 @@ github.com/Allysonubius
         elif index == 1:
 
             width = 340
-            height = 800
+            height = 700
 
         # =====================================================
         # ABOUT
@@ -721,6 +726,35 @@ github.com/Allysonubius
         self.tray.show()
 
         print("[TRAY] iniciado")
+        
+    # =========================================================
+    # FORMATTER COM LOADING STATE
+    # =========================================================
+
+    def format_metric(self, val, fmt_str="{:.0f}", suffix="", is_text=False):
+            # Spinner de carregamento
+            spinner = self.spinner_frames[self.spinner_idx]
+            
+            # Caso especial para strings (nomes de hardware)
+            if is_text:
+                if val in [None, 0, "0", "Unknown", ""]:
+                    return f"Carregando {spinner}"
+                return str(val)
+            
+            # Para valores numéricos:
+            # Se for None, é sinal de que a função de hardware falhou ou não carregou
+            if val is None:
+                return spinner
+                
+            try:
+                # Se o valor é 0, mas estamos esperando uma medição (ex: temperatura ou clock),
+                # ainda pode ser carregamento.
+                if float(val) == 0:
+                    return spinner
+                    
+                return f"{fmt_str.format(float(val))}{suffix}"
+            except:
+                return spinner
 
     # =========================================================
     # UPDATE OVERLAY
@@ -729,6 +763,8 @@ github.com/Allysonubius
     def update_overlay(self):
 
         try:
+            # Atualiza o índice da animação
+            self.spinner_idx = (self.spinner_idx + 1) % 4
 
             hw = get_hardware_data()
 
@@ -814,7 +850,7 @@ github.com/Allysonubius
             )
 
             ping_icon = get_status_icon(
-                network_data["ping"],
+                network_data.get("ping", 0),
                 80,
                 150
             )
@@ -827,7 +863,10 @@ github.com/Allysonubius
 
             ideal_ram_clock = 3600
 
-            if ram_clock < ideal_ram_clock:
+            if ram_clock == 0:
+                ram_clock_icon = "[...]"
+                
+            elif ram_clock < ideal_ram_clock:
 
                 ram_clock_icon = (
                     f"[BAIXO/IDEAL: "
@@ -847,24 +886,24 @@ github.com/Allysonubius
             # =================================================
 
             compact_text = f"""
-🎮 FPS        : {fps:.0f}
-🕒 Frametime  : {frametime:.1f}ms {frametime_icon}
+🎮 FPS        : {self.format_metric(fps)}
+🕒 Frametime  : {self.format_metric(frametime, '{:.1f}', 'ms')} {frametime_icon}
 
-🌐 PING : {network_data["ping"]:>3} ms {ping_icon}
-⬇ DOWN : {network_data["download_mbps"]:>6.2f} Mbps
-⬆ UP   : {network_data["upload_mbps"]:>6.2f} Mbps
+🌐 PING : {self.format_metric(network_data.get('ping', 0), '{:>3}', ' ms')} {ping_icon}
+⬇ DOWN : {self.format_metric(network_data.get('download_mbps', 0), '{:>6.2f}', ' Mbps')}
+⬆ UP   : {self.format_metric(network_data.get('upload_mbps', 0), '{:>6.2f}', ' Mbps')}
 
-🌡 CPU Temp   : {hw.get("cpu_temp", 0):.0f}°C {cpu_temp_icon}
-⚙ CPU Usage  : {hw.get("cpu_usage", 0):.0f}% {cpu_usage_icon}
+🌡 CPU Temp   : {self.format_metric(hw.get('cpu_temp', 0), '{:.0f}', '°C')} {cpu_temp_icon}
+⚙ CPU Usage  : {self.format_metric(hw.get('cpu_usage', 0), '{:.0f}', '%')} {cpu_usage_icon}
 
-🎮 GPU Temp   : {hw.get("gpu_temp", 0):.0f}°C {gpu_temp_icon}
-📈 GPU Usage  : {hw.get("gpu_usage", 0):.0f}% {gpu_usage_icon}
+🎮 GPU Temp   : {self.format_metric(hw.get('gpu_temp', 0), '{:.0f}', '°C')} {gpu_temp_icon}
+📈 GPU Usage  : {self.format_metric(hw.get('gpu_usage', 0), '{:.0f}', '%')} {gpu_usage_icon}
 
-🧠 RAM Used   : {hw.get("ram_used", 0):.1f}GB
-💾 RAM Total  : {hw.get("ram_total", 0):.1f}GB
-📊 RAM Usage  : {hw.get("ram_usage", 0):.0f}% {ram_usage_icon}
+🧠 RAM Used   : {self.format_metric(hw.get('ram_used', 0), '{:.1f}', 'GB')}
+💾 RAM Total  : {self.format_metric(hw.get('ram_total', 0), '{:.1f}', 'GB')}
+📊 RAM Usage  : {self.format_metric(hw.get('ram_usage', 0), '{:.0f}', '%')} {ram_usage_icon}
 
-⚡ RAM CLOCK  : {ram_clock:.0f}MHz {ram_clock_icon}
+⚡ RAM CLOCK  : {self.format_metric(ram_clock, '{:.0f}', 'MHz')} {ram_clock_icon}
 """
 
             self.compact_label.setText(
@@ -876,47 +915,37 @@ github.com/Allysonubius
             # =================================================
 
             detailed_text = f"""
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🖥 CPU : {hw.get("cpu_name", "Unknown")}
+🖥 CPU : {self.format_metric(hw.get('cpu_name', 'Unknown'), is_text=True)}
+🎮 GPU : {self.format_metric(hw.get('gpu_name', 'Unknown'), is_text=True)}
+🧩 MB  : {self.format_metric(hw.get('motherboard_name', 'Unknown'), is_text=True)}
 
-🎮 GPU : {hw.get("gpu_name", "Unknown")}
+🌐 PING      : {self.format_metric(network_data.get('ping', 0), '{:>3}', ' ms')}   {ping_icon}
+⬇ DOWN      : {self.format_metric(network_data.get('download_mbps', 0), '{:>6.2f}', ' Mbps')}
+⬆ UP        : {self.format_metric(network_data.get('upload_mbps', 0), '{:>6.2f}', ' Mbps')}
 
-🧩 MB  : {hw.get("motherboard_name", "Unknown")}
+🎮 FPS       : {self.format_metric(fps)}
+🕒 FRAME     : {self.format_metric(frametime, '{:.1f}', 'ms')} {frametime_icon}
+🧠 PROCESS   : {self.format_metric(process, is_text=True)}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌐 PING      : {network_data["ping"]:>3} ms   {ping_icon}
-⬇ DOWN      : {network_data["download_mbps"]:>6.2f} Mbps
-⬆ UP        : {network_data["upload_mbps"]:>6.2f} Mbps
+🌡 CPU TEMP  : {self.format_metric(hw.get('cpu_temp', 0), '{:>3.0f}', '°C')}   {cpu_temp_icon}
+⚙ CPU USE   : {self.format_metric(hw.get('cpu_usage', 0), '{:>3.0f}', '%')}    {cpu_usage_icon}
+🚀 CPU CLK   : {self.format_metric(hw.get('cpu_clock', 0), '{:>4.0f}', 'MHz')}
+⚡ CPU PWR   : {self.format_metric(hw.get('cpu_power', 0), '{:>3.0f}', 'W')}    {cpu_power_icon}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎮 FPS       : {fps:.0f}
-🕒 FRAME     : {frametime:.1f}ms {frametime_icon}
-🧠 PROCESS   : {process}
+🌡 GPU TEMP  : {self.format_metric(hw.get('gpu_temp', 0), '{:>3.0f}', '°C')}   {gpu_temp_icon}
+🔥 HOTSPOT   : {self.format_metric(hw.get('gpu_hotspot', 0), '{:>3.0f}', '°C')}   {gpu_hotspot_icon}
+📈 GPU USE   : {self.format_metric(hw.get('gpu_usage', 0), '{:>3.0f}', '%')}    {gpu_usage_icon}
+🚀 GPU CLK   : {self.format_metric(hw.get('gpu_core_clock', 0), '{:>4.0f}', 'MHz')}
+⚡ GPU PWR   : {self.format_metric(hw.get('gpu_power', 0), '{:>3.0f}', 'W')}    {gpu_power_icon}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌡 CPU TEMP  : {hw.get("cpu_temp", 0):>3.0f}°C   {cpu_temp_icon}
-⚙ CPU USE   : {hw.get("cpu_usage", 0):>3.0f}%    {cpu_usage_icon}
-🚀 CPU CLK   : {hw.get("cpu_clock", 0):>4.0f}MHz
-⚡ CPU PWR   : {hw.get("cpu_power", 0):>3.0f}W    {cpu_power_icon}
+🎮 VRAM USED : {self.format_metric(hw.get('gpu_vram_used', 0), '{:.1f}', 'GB')}
+💾 VRAM TOT  : {self.format_metric(hw.get('gpu_vram_total', 0), '{:.1f}', 'GB')}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌡 GPU TEMP  : {hw.get("gpu_temp", 0):>3.0f}°C   {gpu_temp_icon}
-🔥 HOTSPOT   : {hw.get("gpu_hotspot", 0):>3.0f}°C   {gpu_hotspot_icon}
-📈 GPU USE   : {hw.get("gpu_usage", 0):>3.0f}%    {gpu_usage_icon}
-🚀 GPU CLK   : {hw.get("gpu_core_clock", 0):>4.0f}MHz
-⚡ GPU PWR   : {hw.get("gpu_power", 0):>3.0f}W    {gpu_power_icon}
+🧠 RAM USED  : {self.format_metric(hw.get('ram_used', 0), '{:.1f}', 'GB')}
+💾 RAM TOT   : {self.format_metric(hw.get('ram_total', 0), '{:.1f}', 'GB')}
+📊 RAM USE   : {self.format_metric(hw.get('ram_usage', 0), '{:>3.0f}', '%')}    {ram_usage_icon}
+⚡ RAM CLK   : {self.format_metric(ram_clock, '{:.0f}', 'MHz')} {ram_clock_icon}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎮 VRAM USED : {hw.get("gpu_vram_used", 0):.1f}GB
-💾 VRAM TOT  : {hw.get("gpu_vram_total", 0):.1f}GB
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🧠 RAM USED  : {hw.get("ram_used", 0):.1f}GB
-💾 RAM TOT   : {hw.get("ram_total", 0):.1f}GB
-📊 RAM USE   : {hw.get("ram_usage", 0):>3.0f}%    {ram_usage_icon}
-⚡ RAM CLK   : {ram_clock:.0f}MHz {ram_clock_icon}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 F10 = SHOW/HIDE
 """
 
